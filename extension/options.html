@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PromptSmith settings</title>
+  <style>
+    body { font: 14px/1.5 system-ui, -apple-system, sans-serif; max-width: 560px; margin: 32px auto; padding: 0 16px; color: #1f1d2b; }
+    h1 { font-size: 20px; } h2 { font-size: 15px; margin-top: 28px; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    input, textarea { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+    textarea { min-height: 56px; }
+    button { margin-top: 14px; padding: 8px 14px; border: 0; border-radius: 6px; background: #7c5cff; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+    button.secondary { background: #ecebf3; color: #1f1d2b; }
+    .hint { color: #666; font-size: 12px; }
+    #status { margin-top: 12px; min-height: 20px; }
+  </style>
+</head>
+<body>
+  <h1>PromptSmith</h1>
+  <p class="hint">Type a rough line in ChatGPT, Claude or Gemini and click <b>✦ Enhance</b>. PromptSmith rewrites it into a full prompt using your profile.</p>
+
+  <h2>Account</h2>
+  <label for="server">Server URL</label>
+  <input id="server" placeholder="http://localhost:8000">
+  <label for="apiKey">API key</label>
+  <input id="apiKey" type="password" placeholder="ps_…">
+  <button id="signup" class="secondary" type="button">Create a free key</button>
+
+  <h2>Your profile</h2>
+  <p class="hint">Saved once, used for every prompt.</p>
+  <label for="business">Your business</label>
+  <textarea id="business" placeholder="e.g. Online yoga classes for new mothers"></textarea>
+  <label for="audience">Your audience</label>
+  <textarea id="audience" placeholder="e.g. First-time mums, 28-40, short on time"></textarea>
+  <label for="voice">Your voice</label>
+  <textarea id="voice" placeholder="e.g. Warm, honest, a little funny. No jargon."></textarea>
+  <label for="goals">Your goals</label>
+  <textarea id="goals" placeholder="e.g. Fill the January cohort, grow the newsletter"></textarea>
+
+  <button id="save" type="button">Save</button>
+  <div id="status" role="status"></div>
+  <script src="options.js"></script>
+</body>
+</html>

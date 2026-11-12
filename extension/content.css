@@ -1,0 +1,39 @@
+.promptsmith-btn {
+  position: fixed;
+  z-index: 2147483646;
+  padding: 5px 12px;
+  border: 1px solid #7c5cff;
+  border-radius: 999px;
+  background: #7c5cff;
+  color: #fff;
+  font: 600 12px/1.4 system-ui, -apple-system, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.promptsmith-btn:hover { background: #6a48f5; }
+.promptsmith-btn:disabled { opacity: 0.7; cursor: progress; }
+.promptsmith-btn[hidden], .promptsmith-toast[hidden] { display: none; }
+
+.promptsmith-toast {
+  position: fixed;
+  z-index: 2147483647;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  max-width: min(480px, 90vw);
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #1f1d2b;
+  color: #fff;
+  font: 13px/1.45 system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+.promptsmith-toast button {
+  margin-left: 8px;
+  border: 0;
+  background: none;
+  color: #b9a8ff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}

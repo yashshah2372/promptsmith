@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "PromptSmith",
+  "version": "0.1.0",
+  "description": "Turn a rough line into a complete, expert prompt inside ChatGPT, Claude and Gemini.",
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "action": { "default_title": "PromptSmith settings" },
+  "options_page": "options.html",
+  "background": { "service_worker": "background.js" },
+  "permissions": ["storage"],
+  "optional_host_permissions": ["https://*/*", "http://localhost/*", "http://127.0.0.1/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*", "https://claude.ai/*", "https://gemini.google.com/*"],
+      "js": ["composer.js", "content.js"],
+      "css": ["content.css"]
+    }
+  ]
+}

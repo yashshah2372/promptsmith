@@ -1,0 +1,28 @@
+[project]
+name = "promptsmith"
+version = "0.1.0"
+description = "Remote MCP server + Chrome extension that turns rough requests into expert prompts with Claude Haiku"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=2.8.0",
+    "mcp>=2.3.0",
+    "starlette>=1.10.0",
+    "uvicorn>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
+]
+
+[project.scripts]
+promptsmith = "promptsmith.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
