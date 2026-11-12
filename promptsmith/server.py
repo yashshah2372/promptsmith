@@ -196,7 +196,8 @@ def main() -> None:
 
     host = os.environ.get("HOST", "127.0.0.1")
     port = int(os.environ.get("PORT", "8000"))
-    public_url = os.environ.get("PUBLIC_URL", f"http://localhost:{port}")
+    # Render sets RENDER_EXTERNAL_URL; elsewhere set PUBLIC_URL to the address clients use.
+    public_url = os.environ.get("PUBLIC_URL") or os.environ.get("RENDER_EXTERNAL_URL") or f"http://localhost:{port}"
     app = create_app(Store(os.environ.get("PROMPTSMITH_DB", "promptsmith.db")), Enhancer(), public_url, host=host)
     uvicorn.run(app, host=host, port=port)
 

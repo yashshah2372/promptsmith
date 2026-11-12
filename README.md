@@ -95,6 +95,12 @@ A fake Claude client stands in for the API, so the tests need no key.
 
 ## Deploy
 
+**Render (free):** New → Blueprint → pick this repo. `render.yaml` sets up everything; paste your
+`ANTHROPIC_API_KEY` when asked. The free plan sleeps when idle and has no persistent disk, so keys
+and profiles reset on restart. Use a paid plan with a disk for real users.
+
+**Docker, anywhere else:**
+
 ```bash
 docker build -t promptsmith .
 docker run -p 8000:8000 -e ANTHROPIC_API_KEY=... -e PUBLIC_URL=https://your.domain \

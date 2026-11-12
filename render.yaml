@@ -1,0 +1,17 @@
+# Render Blueprint: New > Blueprint > pick this repo. You'll be asked for ANTHROPIC_API_KEY.
+# The free plan has no persistent disk, so SQLite (keys, profiles) resets when the service restarts.
+services:
+  - type: web
+    name: promptsmith
+    runtime: python
+    plan: free
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    startCommand: .venv/bin/promptsmith
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: HOST
+        value: 0.0.0.0
+      - key: ANTHROPIC_API_KEY
+        sync: false
