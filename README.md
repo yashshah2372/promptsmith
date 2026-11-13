@@ -12,6 +12,16 @@ It works in two places from one backend:
 
 Prompts are generated with **Claude Haiku** (`claude-haiku-5-5`) via the Anthropic API.
 
+**Live demo:** https://promptsmith-10xr.onrender.com (MCP endpoint: `/mcp`). It runs on Render's free
+plan, so the first request after an idle period can take about 50 seconds while it wakes up.
+
+```bash
+# get a free key, then connect Claude Code to the live server
+curl -X POST https://promptsmith-10xr.onrender.com/v1/keys
+claude mcp add --transport http promptsmith https://promptsmith-10xr.onrender.com/mcp \
+  --header "Authorization: Bearer ps_..."
+```
+
 ```
  Chrome extension ──REST /v1/enhance──┐
                                       ├──► PromptSmith server ──► Claude Haiku
